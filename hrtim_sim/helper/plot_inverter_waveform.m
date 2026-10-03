@@ -51,19 +51,28 @@ grid on;
 %% 
 figure();
 
+% Find the first time EEV8 goes high
+idx = find(simOut.EEV8.Data >= 1, 1, 'first');
+t_ocd = simOut.tout(idx);
+
 % Plot TB1
 sp = subplot(4,1,1);
-plot(simOut.TB1);
+plot(simOut.TB1,"LineWidth",lineWidth);
+hold on;
+xline(t_ocd,'--r','LineWidth',lineWidth);
 ylim([0 1.25]);
 yticks([0 1]);
 ylabel('TB1');
-sp.Title.Visible = 'off';
+sp.Title.Visible = 'on';
+title("H-Bridge Drive Signals (Pulse Skipping Active)")
 xlabel('');
 grid on;
 
 % Plot TB2
 sp = subplot(4,1,2);
-plot(simOut.TB2);
+plot(simOut.TB2,"LineWidth",lineWidth);
+hold on;
+xline(t_ocd,'--r','LineWidth',lineWidth);
 ylim([0 1.25]);
 yticks([0 1]);
 ylabel('TB2');
@@ -73,7 +82,9 @@ grid on;
 
 % Plot TC1
 sp = subplot(4,1,3);
-plot(simOut.TC1);
+plot(simOut.TC1,"LineWidth",lineWidth);
+hold on;
+xline(t_ocd,'--r','LineWidth',lineWidth);
 ylim([0 1.25]);
 yticks([0 1]);
 ylabel('TC1');
@@ -81,10 +92,11 @@ sp.Title.Visible = 'off';
 xlabel('');
 grid on;
 
-
 % Plot TC2
 sp = subplot(4,1,4);
-plot(simOut.TC2);
+plot(simOut.TC2,"LineWidth",lineWidth);
+hold on;
+xline(t_ocd,'--r','LineWidth',lineWidth);
 ylim([0 1.25]);
 yticks([0 1]);
 ylabel('TC2');
