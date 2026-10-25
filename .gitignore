@@ -1,3 +1,6 @@
 /data
 /hrtim_sim/archive
 *.asv
+*.slxc
+/slprj
+/sandbox
