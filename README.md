@@ -1,3 +1,8 @@
+<figure>
+  <img src="emma-mk1-drsstc-readme-banner.jpg" alt="Emma Mk1 DRSSTC render">
+  <figcaption align="center">Figure 1. <i>Emma Mk1</i> DRSSTC</figcaption>
+</figure>
+
 <h1>Brief</h1>
 
 MATLAB project consisting of scripts and Simulink models for assisting in the design of the <i>Emma Mk1 DRSSTC</i>.
